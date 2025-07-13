@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Copier la commande connect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .btn:hover {
+      background-color: #45a049;
+    }
+    .info {
+      font-family: monospace;
+      font-size: 18px;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📋 Copier la commande CS2</h2>
+
+  <p class="info" id="cmd">connect 79.127.196.41:25194</p>
+
+  <button class="btn" onclick="copyCommand()">Copier dans le presse-papier</button>
+
+  <script>
+    function copyCommand() {
+      const cmd = document.getElementById("cmd").innerText;
+      navigator.clipboard.writeText(cmd).then(() => {
+        alert("Commande copiée !");
+      });
+    }
+  </script>
+
+</body>
+</html>
